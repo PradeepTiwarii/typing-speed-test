@@ -1,0 +1,259 @@
+/* --- Global Styles & Color Palette --- */
+:root {
+    --dark-bg: #1a1a2e;
+    /* Deep dark blue/purple */
+    --container-bg: #2a2a4e;
+    /* Lighter card background */
+    --primary-accent: #00e5ff;
+    /* Bright cyan/blue from logo */
+    --secondary-accent: #d400ff;
+    /* Bright magenta from logo */
+    --text-light: #e0e0e0;
+    --border-color: #4a4a7a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    /* Center the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+/* --- Main Container Card --- */
+.container {
+    background-color: var(--container-bg);
+    padding: 2.5rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 750px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3),
+        0 0 15px rgba(var(--secondary-accent), 0.2);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    /* YEH LINE BADAL GAYI (THIS LINE CHANGED) */
+    align-items: stretch; 
+}
+
+/* --- LOGO STYLES --- */
+.logo {
+    width: 80px;  /* Main chhota size use kar raha hoon jo suggest kiya tha */
+    height: 80px; 
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(var(--primary-accent), 0.4);
+    
+    /* YEH ADD KAREIN (ADD THIS) */
+    margin-right: 1.5rem; 
+
+    /* YEH HATAYEIN (REMOVE THESE) */
+    /* margin-bottom: 1.5rem; */
+    /* align-self: flex-start; */
+}
+
+/* --- Header Container --- */
+.header-container {
+    display: flex;
+    flex-direction: row; /* Logo aur h1 ko ek row mein rakhega */
+    align-items: center;  /* Dono ko vertically center mein rakhega */
+    width: 100%;          /* Poori width le lo */
+    margin-bottom: 1.5rem; /* Is pure group ke neeche space */
+}
+
+/* --- Elements --- */
+h1 {
+    text-align: left;
+    color: var(--primary-accent);
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+    
+    /* YEH LINE BADAL GAYI (THIS LINE CHANGED) */
+    margin-bottom: 0; 
+}
+
+#paragraph {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    text-align: justify;
+    width: 100%;
+    /* Ensure paragraph takes full width */
+}
+
+#input {
+    width: 100%;
+    height: 140px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    resize: none;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+
+    /* --- Scrollbar Customization --- */
+    /* For WebKit browsers (Chrome, Safari, Edge) */
+    overflow: auto;
+    /* Ensure scrollbar appears when content overflows */
+    scrollbar-width: thin;
+    /* Firefox: makes the scrollbar thinner */
+    scrollbar-color: var(--primary-accent) var(--dark-bg);
+    /* Firefox: thumb color, track color */
+}
+
+#input:focus {
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+/* For WebKit browsers (Chrome, Safari, Edge, Opera) */
+#input::-webkit-scrollbar {
+    width: 14px;
+    /* Thicker scrollbar */
+}
+
+#input::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+    /* Dark background for the track */
+    border-radius: 10px;
+    /* Rounded track */
+}
+
+#input::-webkit-scrollbar-thumb {
+    background-color: var(--primary-accent);
+    /* Bright primary accent color for the thumb */
+    border-radius: 10px;
+    /* Rounded thumb */
+    border: 3px solid var(--dark-bg);
+    /* Creates a border around the thumb, matching the track background */
+}
+
+#input::-webkit-scrollbar-thumb:hover {
+    background-color: var(--secondary-accent);
+    /* Change color on hover for interactivity */
+}
+
+#input::placeholder {
+    color: var(--border-color);
+}
+
+/* --- Focus effect --- */
+#input:focus {
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+/* --- Stats Section --- */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    /* Spreads items out */
+    align-items: center;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+    /* Good for small screens */
+    gap: 1rem;
+    width: 100%;
+    /* Ensure stats takes full width */
+}
+
+.stats p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+/* Make the numbers stand out */
+.stats span {
+    color: var(--primary-accent);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* --- Restart Button --- */
+#restart {
+    display: block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-bg);
+    background: var(--primary-accent);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    /* YEH NAYI LINE ADD KAREIN (ADD THIS NEW LINE) */
+    align-self: center; /* Isse button vaapas center mein aa jayega */
+}
+
+#restart:hover {
+    background: white;
+    /* Brighter hover */
+    color: var(--dark-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 229, 255, 0.4);
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+#paragraph span {
+    transition: color 0.3s;
+}
+
+/* --- Social Media Links --- */
+.social-links {
+    text-align: center;
+    margin-top: 2rem; /* Button se thoda space */
+    padding-top: 1.5rem; /* Upar ek line bhi daal sakte hain */
+    border-top: 1px solid var(--border-color); /* Optional: ek divider line */
+}
+
+.social-links a {
+    /* Icon ka size */
+    font-size: 1.6rem; 
+    
+    /* Icon ka color (aapke theme se) */
+    color: var(--border-color); 
+    
+    /* Icons ke beech mein space */
+    margin: 0 1rem; 
+    
+    /* Link ka underline hatane ke liye */
+    text-decoration: none; 
+    
+    /* Smooth hover effect */
+    transition: color 0.3s ease, transform 0.3s ease;
+    
+    /* Transform ke liye zaroori */
+    display: inline-block;
+}
+
+.social-links a:hover {
+    /* Hover par color (aapka primary color) */
+    color: var(--primary-accent); 
+    
+    /* Chhota sa "pop" effect */
+    transform: translateY(-3px) scale(1.1); 
+}
