@@ -69,8 +69,7 @@ It helps users improve typing speed, accuracy, and consistency in a fun way.
 
 ## 🌐 Live Demo
 
-👉 (Add your deployed link here - GitHub Pages / Netlify)
-
+👉 https://typing-speed-test-gamma-wheat.vercel.app/
 ---
 
 ## 🤝 Contributing
